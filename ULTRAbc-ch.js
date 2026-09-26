@@ -1223,9 +1223,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         await waitFor(() => ServerSocket && ServerIsConnected);
 
         const UBC_TIPS = [
-            "See more stars with the UBC options and commands!",
-            "Tip: Use the /uhelp command in chat or explore the wiki to better know all the UBC commands.",
-            "Enjoy all the UBC options and commands!"
+            "使用 UBC 的选项和命令，探索更多精彩！",
+            "提示：在聊天中使用 /uhelp 命令，或查阅 Wiki，了解所有 UBC 命令。",
+            "尽情使用 UBC 的各项选项和命令吧！"
         ]
 
         const ubcSettingsKey = () => "bc_moaner_" + Player.MemberNumber;
@@ -2216,7 +2216,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 DrawTextWrapGood(UBC_TIPS[Math.floor(((TimerGetTime() % 100000) / 100000) * (UBC_TIPS.length))], 1650, 260, 400, 100, ForeColor = UBC_API.HintForeColor);
 
                 DrawText("ULTRAbc " + UBCver, 1665, 525, "Black", "Gray");
-                DrawButton(1500, 550, 315, 90, "", "White", "", "Link to Icons8");
+                DrawButton(1500, 550, 315, 90, "", "White", "", "打开 Icons8 网站");
                 DrawImageResize(IMAGES.LOGO, 1510, 565, 60, 60);
                 DrawTextFit("Icons8 图标", 1690, 598, 308, "Black");
                 DrawButton(1500, 655, 315, 90, "", "White", "", "在 GitHub 上打开 UBC 更新日志");
@@ -2262,9 +2262,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 		}
   
 		PreferenceSubscreenResetRun = function () {
-		    DrawTextWrapGood("Do you want to reset all settings to Defaults?",1000, 200, 800, 100, ForeColor = UBC_API.HintForeColor);
-		    DrawButton(400, 650, 300, 100, "Confirm", "Red","","Confirm Reset and Exit");
-		    DrawButton(1300, 650, 300, 100, "Cancel","White","","Cancel Reset");
+		    DrawTextWrapGood("确定要将所有设置恢复为默认值吗？",1000, 200, 800, 100, ForeColor = UBC_API.HintForeColor);
+		    DrawButton(400, 650, 300, 100, "确认", "Red","","确认重置并退出");
+		    DrawButton(1300, 650, 300, 100, "取消","White","","取消重置");
 		}
   
 		PreferenceSubscreenResetClick = function () {
@@ -2499,7 +2499,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
             PreferenceSubscreenUBCCheatsLoad = function() {
                 UBCPreferenceSubscreen = "UBCCheats";
-                addMenuButton(150, 64, "添加/移除卡牌游戏的额外卡牌：", "Toggle", function() {
+                addMenuButton(150, 64, "添加/移除卡牌游戏的额外卡牌：", "切换", function() {
                         Player.Game.ClubCard.Reward = "";
                         if (Player.UBC.ubcSettings.cextra == false) {
                             Player.UBC.ubcSettings.cextra = true;
@@ -2574,7 +2574,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     "这些热键与 /quit 命令等效，但没有特定的可选文本；以及 /totalrelease 命令，但仅适用于您自己。          数字键盘上的热键：                    除号 = 快速离开                        乘号 = 完全释放。                    如果您没有数字键盘，请使用类似的命令或 UBC 按钮。                   此选项在非逃离模式下不可用。", "Player.UBC.ubcSettings.noescape"
                 );
                 addMenuCheckbox(64, 64, "在聊天搜索中启用热键：", "cskeys",
-                    "启用此选项后，您可以直接访问一些有用的屏幕，并可以更改聊天搜索背景                                           Left Alt = 偏好设置                   左箭头 = 衣柜                           右箭头 = 扩展                       上箭头 = 随机背景                下箭头 = 选择背景                           Tab = 默认背景"
+                    "启用此选项后，您可以直接访问一些有用的屏幕，并可以更改聊天搜索背景                                           左 Alt = 偏好设置                   左箭头 = 衣柜                           右箭头 = 扩展                       上箭头 = 随机背景                下箭头 = 选择背景                           Tab = 默认背景"
                 );
                 addMenuCheckbox(64, 64, "在好友列表中启用热键：", "frkeys",
                     "这些热键允许在您位于大厅（不在房间）时，在您可访问的另一个大厅中获取可点击链接。您只能在线好友列表上使用它们，并且如果您不在搜索输入框或发送提示音区域。背景也可以更改。热键列表：        D = 默认背景        F = 女性俱乐部  G = 混合俱乐部    H = 男性俱乐部 J = 精神病院         R = 随机背景    S = 选择背景"
@@ -2604,8 +2604,8 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 addMenuCheckbox(64, 64, "在地图中启用完全听觉：", "mapfull2",
                     "启用后，您在地图房间中的听力没有任何限制", false, 140
                 );
-                addMenuCheckbox(64, 64, "Enable full location in maps: ", "mapfull3",
-                    "When enabled, the /maproom and /mapz commands will always give the coordinates of other players in the map rooms, even if the Location Sharing is blocked. Note that the administrators will be informed that you use this cheat, if they have blocked Location Sharing and use one of these commands. So using this cheat in such rooms can lead to bad consequences. Be careful!", false, 140
+                addMenuCheckbox(64, 64, "在地图中显示所有玩家的位置：", "mapfull3",
+                    "启用后，即使房间禁止位置共享，/maproom 和 /mapz 命令也会显示地图房间中其他玩家的坐标。请注意：如果管理员禁止了位置共享，并使用这些命令之一，他们会得知你启用了此作弊功能。在这些房间中使用此功能可能带来不良后果，请谨慎使用！", false, 140
                 );
                 addMenuCheckbox(64, 64, "在地图中启用完全视野：", "mapfull",
                     "启用后，您可以看到整个地图房间而没有迷雾。注意：/mapfog 命令（仅在当前位置图房间中启用/禁用迷雾）如果此设置激活将无效。如果您在启用此设置之前没有使用 /mapfog 移除迷雾，迷雾会在禁用时恢复。", false, 140
@@ -2655,8 +2655,8 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 addMenuCheckbox(64, 64, "启用 NPC 惩罚：", "npcpunish",
                     "默认情况下，UBC 禁用 NPC 的自动惩罚（特别是当您被束缚在房间中并呼叫女仆帮助时）。如果您喜欢这些惩罚，可以使用此选项再次启用它们。", false, 140
                 );
-                addMenuCheckbox(64, 64, "No pending friends in Friend List: ", "nopending",
-                    "When checked, the All Friends screen in Friend List will not display the pending (unconfirmed) friends.", false, 140
+                addMenuCheckbox(64, 64, "好友列表中隐藏待确认的好友：", "nopending",
+                    "勾选后，好友列表的“所有好友”页面将不显示尚未确认的好友。", false, 140
                 );
                 addMenuCheckbox(64, 64, "安全词后不更改权限：", "fixperm",
                     "当您使用 BC 安全词命令或安全词菜单中的撤销选项时，BC 会自动更改您的通用物品权限。如果您不喜欢这样，请使用此选项，您的通用物品权限将不会被修改。", false, 140
@@ -2908,7 +2908,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     ElementRemove("InputSkillSelfbondage");
                     ElementRemove("InputSkillWillpower");
                     defaultExit();
-                } else PreferenceMessage = "Put a valid number";
+                } else PreferenceMessage = "请输入有效数字";
             }
 
             PreferenceSubscreenUBCSpecialModesLoad = function() {
@@ -2951,11 +2951,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
             PreferenceSubscreenUBCTalkingLoad = function() {
                 UBCPreferenceSubscreen = "UBCTalking";
-                addMenuInput(200, "AFK time before message (1-60):", "afktime", "InputAFKTime",
-                    "Input a number between 1 and 60 to set the number of minutes being AFK before an automatic message will be displayed in the chat to inform other players about your AFK status. By default, it is 10 minutes.", 30
+                addMenuInput(200, "离开多久后发送提醒（1-60 分钟）：", "afktime", "InputAFKTime",
+                    "输入 1 到 60 之间的数字，设置离开多少分钟后在聊天中自动发送消息，告知其他玩家你暂时不在。默认为 10 分钟。", 30
                 );
-                addMenuCheckbox(64, 64, "Enable automatic AFK message: ", "afkinfo",
-                    "When enabled, an automatic message will be displayed in the chat to inform other players about your AFK status when you are in this status since the time you have set for this feature. It will also activate the AFK icon, and will be repeated every 30 minutes after the first message. Note: When you are no longer AFK, the 'forced' setting with the AFK icon will not be modified, you need to change it manually if this is what you want.", false, 166
+                addMenuCheckbox(64, 64, "启用自动离开提醒：", "afkinfo",
+                    "启用后，当离开时间达到设定值时，会在聊天中自动发送提醒，并启用 AFK 图标。首次提醒后，每隔 30 分钟重复一次。注意：回来后不会自动取消“强制显示 AFK 图标”的设置，如需关闭，请手动更改。", false, 166
                 );
                 addMenuInput(200, "动物说话/耳语模式（0-9）:", "animal", "InputAnimalMode",
                     "输入 0 到 9 之间的数字来选择以下强制的'永久'动物说话或耳语模式之一：0 人类 - 1 兔子 - 2 奶牛 - 3 狐狸 - 4 猫咪 - 5 老鼠 - 6 猪 - 7 小马 - 8 小狗 - 9 小狼。如果你只想暂时使用特定说话模式，请在这里选择 0（人类说话），然后使用 /atalk 命令。", 30
@@ -3036,11 +3036,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
             PreferenceSubscreenUBCVisualEffectsLoad = function() {
                 UBCPreferenceSubscreen = "UBCVisualEffects";
-                addMenuInput(200, "Control item animation (0-2):", "animstate", "InputAnimControl",
-                    "Input a number between 0 and 2 to control animation integrated in some items such as the futuristic crate: 0 No control - 1 Partial control (2 updates per second) - 2 Full control (no animation). Important note: alteration of the item animation can lead in some cases to unexpected effects, such as graphical issues, bugs or discrepancies. Use it only if you're experiencing lagging problems.", 65
+                addMenuInput(200, "控制物品动画（0-2）：", "animstate", "InputAnimControl",
+                    "输入 0 到 2 之间的数字，控制未来风格箱子等物品自带的动画：0 不控制 - 1 部分控制（每秒更新 2 次）- 2 完全控制（停止动画）。重要提示：修改物品动画可能导致显示异常、错误或不同步等意外情况。仅建议在遇到卡顿时使用。", 65
                 );
-                addMenuCheckbox(64, 64, "Disable gray effect in wardrobe: ", "nograywr",
-                    "By default, BC applies a gray effect on the top bar of the wardrobe. If you don't like that, just select this setting!", false, 200
+                addMenuCheckbox(64, 64, "禁用衣柜顶部的灰色效果：", "nograywr",
+                    "默认情况下，BC 会在衣柜顶部栏显示灰色效果。不喜欢此效果时，可以勾选此设置。", false, 200
                 );
                 let pmsg = "默认情况下，当你非常兴奋并可能达到高潮时，BC 会添加消息和粉色效果。如果你不喜欢这样，这个 UBC 设置会让你满意！注意：当检测到 LSCG Splatter 功能启用时不可用。";
                 let spl = 0;
@@ -3068,7 +3068,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     "输入 0 到 3 之间的数字来选择以下强制的'永久'色调效果等级之一：0 无色调效果 - 1 浅色调效果 - 2 中等色调效果 - 3 重色调效果。", 65
                 );
                 addMenuInput(200, "色调效果颜色（格式 #000000）:", "tintcolor", "InputTintColor",
-                    "输入十六进制格式 #000000 的颜色代码，在 Bondage Club 中几乎 everywhere 应用色调效果。别忘了也选择色调效果等级！色调效果也将应用于大多数插件创建的页面。已知的例外是 BCX 和 Echo 的模组。MBS 的情况特殊（见特定设置）。与主题颜色混合时最终颜色可能不同。", 65
+                    "输入十六进制格式 #000000 的颜色代码，在 Bondage Club 中几乎所有界面应用色调效果。别忘了也选择色调效果等级！色调效果也将应用于大多数插件创建的页面。已知的例外是 BCX 和 Echo 的模组。MBS 的情况特殊（见特定设置）。与主题颜色混合时最终颜色可能不同。", 65
                 );
                 let mbsmsg = "启用后，登录后务必访问扩展屏幕以激活它。色调颜色将用作 MBS 屏幕中央部分的背景颜色。如果你稍后禁用它，恢复的颜色将对应于默认 MBS 颜色或主主题颜色。当色调等级为 0 时此设置无效。当未使用 MBS 或所有 UBC 色调设置被完全禁用时不可用。";
                 let mbb = 0;
@@ -3119,14 +3119,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
 			PreferenceSubscreenUBCVisualPreferencesLoad = function() {
                 UBCPreferenceSubscreen = "UBCVisualPreferences";
-                addMenuCheckbox(64, 64, "Enable all UBC changes in Chat Search: ", "altchsh",
-                    "If you uncheck this setting, UBC will use the standard BC Chat Search top bar and menu, and will not display the UBC bottom bar in Chat Search. However, the location for this bar will remain empty.", false, 200
+                addMenuCheckbox(64, 64, "启用 UBC 对聊天搜索的所有修改：", "altchsh",
+                    "取消勾选后，将使用 BC 原有的聊天搜索顶部栏和菜单，并隐藏 UBC 底部栏，但仍会保留底部栏的空白区域。", false, 200
                 );
-                addMenuCheckbox(64, 64, "Remove UBC bottom bar in Chat Search: ", "noubcbar",
-                    "如果你勾选此设置，UBC 将不会在聊天搜索中显示底部栏。缺失的选项可在聊天搜索菜单中找到。This parameter is not available if you have disabled all UBC changes in Chat Search.", "!Player.UBC.ubcSettings.altchsh", 200
+                addMenuCheckbox(64, 64, "移除聊天搜索中的 UBC 底部栏：", "noubcbar",
+                    "如果你勾选此设置，UBC 将不会在聊天搜索中显示底部栏。缺失的选项可在聊天搜索菜单中找到。如果已禁用 UBC 对聊天搜索的所有修改，则无法使用此设置。", "!Player.UBC.ubcSettings.altchsh", 200
                 );
-				addMenuCheckbox(64, 64, "Enable all UBC changes in the Wardrobe: ", "altwrobe",
-                    "If you uncheck this setting, UBC will use the standard BC Wardrobe.", false, 200
+				addMenuCheckbox(64, 64, "启用 UBC 对衣柜的所有修改：", "altwrobe",
+                    "取消勾选后，将使用 BC 原有的衣柜界面。", false, 200
                 )
             }
 
@@ -3303,7 +3303,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if (!ServerPlayerIsInChatRoom()) return;
             let initialDelay = afktime * 60 * 1000;
             let repeatInterval = 30 * 60 * 1000;
-            let msg = "I'm currently AFK. Please be patient or come back later!";
+            let msg = "我暂时不在，请稍等或稍后再来！";
             if (lastAfkMessageTime === 0) {
                 if (AfkTimerLastEvent + initialDelay < CommonTime()) {
                     ServerSend("ChatRoomChat", {
@@ -4742,7 +4742,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     //Login
     modApi.hookFunction('LoginRun', 4, (args, next) => {
-        DrawButton(750, 145, 500, 60, "ULTRAbc " + UBCver + " Ready!", "Pink", "", "");
+        DrawButton(750, 145, 500, 60, "ULTRAbc " + UBCver + " 已就绪！", "Pink", "", "");
         return next(args);
     });
 
@@ -6041,12 +6041,12 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         DOGSsettings();
         if (noescape == false) {
             if (window.CurrentScreen == "ChatRoom") {
-                DrawButton(955, 360, 45, 45, "OUT", "White", "", "");
+                DrawButton(955, 360, 45, 45, "退出", "White", "", "");
             } else {
                 if (slowleave == true) {
-                    DrawButton(0, 90, 45, 45, "OUT", "White", "", "Slow Exit");
+                    DrawButton(0, 90, 45, 45, "退出", "White", "", "缓慢退出");
                 } else {
-                    DrawButton(0, 90, 45, 45, "OUT", "White", "", "Fast Exit");
+                    DrawButton(0, 90, 45, 45, "退出", "White", "", "快速退出");
                 }
             }
         }
@@ -6103,9 +6103,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         DOGSsettings();
         if (noescape == false) {
             if (window.CurrentScreen == "ChatRoom") {
-                DrawButton(955, 315, 45, 45, "FREE", "White", "", "");
+                DrawButton(955, 315, 45, 45, "解放", "White", "", "");
             } else {
-                DrawButton(0, 45, 45, 45, "FREE", "White", "", "Total Release");
+                DrawButton(0, 45, 45, 45, "解放", "White", "", "完全解放");
             }
         }
     }
@@ -7289,7 +7289,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     },
                     classList: ["chat-search-search-menu-grid-item"],
                     children: [
-                        ElementCreateSettingsLabel("First rooms with friends", "chat-search-search-menu-search-friends-input", {
+                        ElementCreateSettingsLabel("优先显示有好友的房间", "chat-search-search-menu-search-friends-input", {
                             position: "left"
                         }),
                         ElementCheckbox.Create("chat-search-search-menu-friends-input", function() {
@@ -7310,7 +7310,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     },
                     classList: ["chat-search-search-menu-grid-item"],
                     children: [
-                        ElementCreateSettingsLabel("AutoJoin feature:", "chat-search-search-menu-search-autojoin-input", {
+                        ElementCreateSettingsLabel("自动加入功能：", "chat-search-search-menu-search-autojoin-input", {
                             position: "left"
                         }),
                         ElementCheckbox.Create("chat-search-search-menu-autojoin-input", function() {
@@ -7392,7 +7392,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     },
                     classList: ["chat-search-search-menu-grid-item"],
                     children: [
-                        ElementCreateSettingsLabel("Room Size", "chat-search-search-menu-room-size-grid"),
+                        ElementCreateSettingsLabel("房间大小", "chat-search-search-menu-room-size-grid"),
                         {
                             tag: "div",
                             attributes: {
@@ -7405,7 +7405,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                 {
                                     tag: "span",
                                     classList: ["chat-search-search-menu-room-size-label"],
-                                    children: ["min"],
+                                    children: ["最小"],
                                     attributes: {
                                         "for": "chat-search-search-menu-room-size-min"
                                     }
@@ -7413,7 +7413,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                 {
                                     tag: "span",
                                     classList: ["chat-search-search-menu-room-size-label"],
-                                    children: ["max"],
+                                    children: ["最大"],
                                     style: {
                                         "grid-column": "3/3"
                                     },
@@ -7433,7 +7433,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     },
                     classList: ["chat-search-search-menu-grid-item"],
                     children: [
-                        ElementCreateSettingsLabel("Maximum Players in Room", "chat-search-search-menu-players-grid"),
+                        ElementCreateSettingsLabel("房间人数上限", "chat-search-search-menu-players-grid"),
                         {
                             tag: "div",
                             attributes: {
@@ -8030,9 +8030,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if (C.HasOwnerNotes())
                 DrawButton(1715, 535, 90, 90, "", "White", "Icons/Management.png");
             if (noifbuttons == false) {
-                DrawButton(1575, 910, 90, 90, "", "White", "Icons/Reset.png", "Default background");
-                DrawButton(1695, 910, 90, 90, "", "White", "Icons/Random.png", "Random background");
-                DrawButton(1815, 910, 90, 90, "", "White", "Icons/Explore.png", "Select background");
+                DrawButton(1575, 910, 90, 90, "", "White", "Icons/Reset.png", "默认背景");
+                DrawButton(1695, 910, 90, 90, "", "White", "Icons/Random.png", "随机背景");
+                DrawButton(1815, 910, 90, 90, "", "White", "Icons/Explore.png", "选择背景");
             }
         } else if (C.IsOnline()) {
             DrawButton(1815, 190, 90, 90, "", "White", "Icons/Introduction.png");
@@ -8236,9 +8236,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if (C.OnlineSharedSettings.UBCShared != undefined) {
                 if (C.OnlineSharedSettings.UBCShared.cowner1 != undefined) {
                     if (C.OnlineSharedSettings.UBCShared.cowner1 != "") {
-                        DrawTextFit("Collared by " + C.OnlineSharedSettings.UBCShared.cowner1 + " (" + C.OnlineSharedSettings.UBCShared.cowner2 + ")", 550, currentY, 450, "Black", "Gray");
+                        DrawTextFit("主人：" + C.OnlineSharedSettings.UBCShared.cowner1 + " (" + C.OnlineSharedSettings.UBCShared.cowner2 + ")", 550, currentY, 450, "Black", "Gray");
                         currentY += spacing;
-                        DrawTextFit("for " + C.OnlineSharedSettings.UBCShared.cowner3 + " days", 550, currentY, 450, "Black", "Gray");
+                        DrawTextFit("已归属 " + C.OnlineSharedSettings.UBCShared.cowner3 + " 天", 550, currentY, 450, "Black", "Gray");
                         const y = currentY;
                         currentY += spacing;
                         return currentY;
@@ -8332,9 +8332,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if (C.OnlineSharedSettings.UBCShared != undefined) {
                 if (C.OnlineSharedSettings.UBCShared.cowner1 != undefined) {
                     if (C.OnlineSharedSettings.UBCShared.cowner1 != "") {
-                        DrawTextFit("Collared by " + C.OnlineSharedSettings.UBCShared.cowner1 + " (" + C.OnlineSharedSettings.UBCShared.cowner2 + ")", 550, currentY, 450, "Black", "Gray");
+                        DrawTextFit("主人：" + C.OnlineSharedSettings.UBCShared.cowner1 + " (" + C.OnlineSharedSettings.UBCShared.cowner2 + ")", 550, currentY, 450, "Black", "Gray");
                         currentY += spacing;
-                        DrawTextFit("for " + C.OnlineSharedSettings.UBCShared.cowner3 + " days", 550, currentY, 450, "Black", "Gray");
+                        DrawTextFit("已归属 " + C.OnlineSharedSettings.UBCShared.cowner3 + " 天", 550, currentY, 450, "Black", "Gray");
                         const y = currentY;
                         currentY += spacing;
                         return currentY;
@@ -8716,7 +8716,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         /** @type {ChatRoomSettings} */
         PrisonRoom = {
             Name: "Pandora " + Math.round(Math.random() * 1000000000).toString(),
-            Description: "Pandora Penitentiary Cell",
+            Description: "潘多拉监狱牢房",
             Admin: [Player.MemberNumber],
             Whitelist: [],
             Ban: listban,
@@ -8973,7 +8973,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         if (Player.MapData.PrivateState.HasKeyGold) keys.push("Gold");
         if (Player.MapData.PrivateState.HasKeySilver) keys.push("Silver");
         if (Player.MapData.PrivateState.HasKeyBronze) keys.push("Bronze");
-        ChatRoomSendLocal(`Keys found: ${keys.join(" - ") || "None"}.`);
+        ChatRoomSendLocal(`找到的钥匙：${keys.join(" - ") || "无"}。`);
     }
 
     function UBCinfo(character, command) {
@@ -8981,17 +8981,17 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
         const aka = character.Nickname ? character.Name : "";
         const number = character.MemberNumber;
         ChatRoomSendLocal(`${name}${aka ? " (" + aka + ")" : ""} - ${number}`);
-        let ubc1 = "Does not use ULTRAbc.";
-        let ubc2 = "Does not use Uwall.";
+        let ubc1 = "未使用 ULTRAbc。";
+        let ubc2 = "未使用 Uwall。";
         const shared = character.OnlineSharedSettings || {};
         if (shared.UBC === UBCver || shared.UBC === UBCver0) {
-            ubc1 = "Is an ULTRAbc user.";
+            ubc1 = "正在使用 ULTRAbc。";
             if (shared.Unoescape === true) {
-                ubc1 = "UBC in no-escape mode";
+                ubc1 = "UBC 处于非逃离模式";
             }
         }
         if (typeof shared.Uwall === "boolean") {
-            ubc2 = shared.Uwall ? "Has enabled Uwall." : "Has disabled Uwall.";
+            ubc2 = shared.Uwall ? "已启用 Uwall。" : "已禁用 Uwall。";
         }
         ChatRoomSendLocal(`${ubc1} - ${ubc2}`);
         if (command == "uroom") ChatRoomSendLocal(" ");
@@ -10222,14 +10222,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 },
                 {
                     id: `wardrobe-slot-import-${C}`,
-					label: (Array.isArray(window.TextData) && window.TextData.some(i => i.Tag === "Paste from clipboard")) ? TextGet("Paste from clipboard") : "Paste from clipboard",
+					label: (Array.isArray(window.TextData) && window.TextData.some(i => i.Tag === "Paste from clipboard")) ? TextGet("Paste from clipboard") : "从剪贴板粘贴",
                     icon: "Icons/Paste.png",
                     classeCss: "wardrobe-slot-import",
                     callback: (slot) => WardrobeImportOutfit(slot)
                 },
                 {
                     id: `wardrobe-slot-export-${C}`,
-                    label: (Array.isArray(window.TextData) && window.TextData.some(i => i.Tag === "Copy to clipboard")) ? TextGet("Paste from clipboard") : "Copy to clipboard",
+                    label: (Array.isArray(window.TextData) && window.TextData.some(i => i.Tag === "Copy to clipboard")) ? TextGet("Copy to clipboard") : "复制到剪贴板",
                     icon: "Icons/Copy.png",
                     classeCss: "wardrobe-slot-export",
                     callback: (slot) => WardrobeExportOutfit(slot)
@@ -11131,19 +11131,19 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             const targetname = parts[2];
             const isValidColor = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(color);
             if (!isValidColor) {
-                infomsg("Invalid color. Use hex format like #RRGGBB or #RGB.");
+                infomsg("颜色无效。请使用 #RRGGBB 或 #RGB 格式的十六进制颜色。");
                 return;
             }
             if (!category || isNaN(category) || category < 1 || category > 5) {
-                infomsg("Invalid category. Use a number between 1 and 5, for the category you want to color: 1 = Items - 2 = Clothes (excluding cosplay) - 3 = Cosplay - 4 = Body - 5 = All categories.");
+                infomsg("类别无效。请用 1 到 5 选择要染色的类别：1 = 物品 - 2 = 服装（不含角色扮演服装）- 3 = 角色扮演服装 - 4 = 身体 - 5 = 所有类别。");
                 return;
             }
             let catname = "";
-            if (category == 1) catname = "items.";
-            if (category == 2) catname = "clothes.";
-            if (category == 3) catname = "cosplay.";
-            if (category == 4) catname = "body.";
-            if (category == 5) catname = "items, clothes, cosplay and body.";
+            if (category == 1) catname = "物品。";
+            if (category == 2) catname = "服装。";
+            if (category == 3) catname = "角色扮演服装。";
+            if (category == 4) catname = "身体。";
+            if (category == 5) catname = "物品、服装、角色扮演服装和身体。";
             const applyColorToAppearance = (appearanceArray, color) => {
                 for (const part of appearanceArray) {
                     if (!part || !part.Asset || !part.Asset.Group || !part.Asset.Group.Name) continue;
@@ -11231,7 +11231,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             let [, , ...message] = command.split(" ");
             let msg = message?.join(" ");
             if (!msg) {
-                infomsg("Please include words to say after the animal number.");
+                infomsg("请在动物编号后输入要说的话。");
                 return;
             }
             if (dolltalk === true && IsDollTalk(msg) === false) {
@@ -11247,18 +11247,18 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'autoheart',
-        Description: "(vibe level) (orgasm mode) (lock time): puts heart locks on yourself and configures them.",
+        Description: "（振动等级）（高潮模式）（上锁时间）：为自己戴上心锁并进行设置。",
         Action: (args) => {
             if (args === "") {
-                let msg = "The autoheart command must be followed by 3 numbers for vibe level, orgasm mode and lock time.\n" +
-                    "Note that the heart lock requires a specific mod.\n" +
+                let msg = "autoheart 命令后必须提供 3 个数字，分别表示振动等级、高潮模式和上锁时间。\n" +
+                    "注意：心锁需要安装对应的插件。\n" +
                     " \n" +
-                    "Available vibe levels:\n" +
+                    "可用的振动等级：\n" +
                     "0 關閉 - 1 低 - 2 中 - 3 中 \n" +
-                    "Available orgasm modes:\n" +
+                    "可用的高潮模式：\n" +
                     "0 正常 - 1 邊緣 - 2 拒絕 \n" +
-                    "The time is expressed in hours. The minimum is 1 hour. Use 0 for unlimited time.\n" +
-                    "Use ? if you want a time randomly choosen by the game (between 1 and 720 hours).";
+                    "时间以小时为单位，最少为 1 小时。使用 0 表示不限时。\n" +
+                    "使用 ? 可让游戏随机选择时间（1 到 720 小时）。";
                 infomsg(msg);
             } else {
                 let stringheart1 = args;
@@ -11313,7 +11313,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                         }
                 }
                 if (heart != 0) {
-                    infomsg("Heart locks applied and configured.");
+                    infomsg("已戴上心锁并完成设置。");
                     ChatRoomCharacterUpdate(Player);
                     let data = JSON.parse(JSON.stringify(Player.HeartLock));
                     ServerSend('ChatRoomChat', {
@@ -11727,7 +11727,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     "larp（真人角色扮演）、lounge（休息室）、magic（魔法）、\n" +
                     "movie（电影）、shibari（绳艺）、stable（马厩）。\n" +
                     "你需要点击相关的 NPC，然后点击适当的选项。\n" +
-                    "For magic, the card option will appear after long dialog, exit and come back if you have started the quest requested by the kitsune, but didn't yet finished it.";
+                    "魔法卡牌选项会在较长的对话后出现。如果已经开始狐妖要求的任务但尚未完成，请先离开再回来。";
                 infomsg(msg);
             } else {
                 minigame = args;
@@ -11837,14 +11837,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'cname',
-        Description: "(custom name): creates a custom name, that does not require to satisfy some conditions.",
+        Description: "（自定义名称）：创建不受部分条件限制的自定义名称。",
         Action: (args, originalInput) => {
             if (args === "") {
-                let msg = "The cname command must be followed by the custom name you want to display in your profile.\n" +
-                    "More letters are accepted than for the official name, it can also include spaces and numbers.\n" +
-                    "Maximum 20 characters (spaces included)!\n" +
-                    "It will work only between UBC users and replace the official name in the profile.\n" +
-                    "Use 无 as name to go back to a profile without custom name.";
+                let msg = "cname 命令后需输入你想在个人资料中显示的自定义名称。\n" +
+                    "与官方名称相比，允许使用更多种类的字母，也可以包含空格和数字。\n" +
+                    "最多 20 个字符（包括空格）！\n" +
+                    "仅在 UBC 用户之间生效，并替换个人资料中显示的官方名称。\n" +
+                    "输入“无”作为名称，可恢复不使用自定义名称的个人资料。";
                 infomsg(msg);
                 return;
             }
@@ -11854,10 +11854,10 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if ((length > 0) && (length < 21) && (custom.match(LS))) {
                 if (custom === "无") {
                     cname = "";
-                    infomsg("Custom name deleted");
+                    infomsg("已删除自定义名称");
                 } else {
                     cname = custom;
-                    infomsg("Custom name created or modified");
+                    infomsg("已创建或修改自定义名称");
                 }
                 M_MOANER_saveControls();
                 Player.OnlineSharedSettings.UBCShared.cname = cname;
@@ -11865,7 +11865,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     OnlineSharedSettings: Player.OnlineSharedSettings
                 });
             } else {
-                infomsg("Maximum 20 characters (spaces included)!");
+                infomsg("最多 20 个字符（包括空格）！");
             }
         }
     }])
@@ -12046,17 +12046,17 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'cowner',
-        Description: "(member number) (owning days) (owner name): sets a custom owner, that will be displayed in your profile.",
+        Description: "（会员编号）（归属天数）（主人名称）：设置在个人资料中显示的自定义主人。",
         Action: (args, originalInput) => {
             args = (args || "").trim();
             originalInput = originalInput || "";
             if (args === "") {
-                let msg = "The cowner command must be followed by the member number of the wished owner, the number of days corresponding to this owning, and the name of the custom owner.\n" +
-                    "This custom owner can be any player of the game, even yourself or a sub that you own.\n" +
-                    "The number of owning days can't exceed the number of days you are in the game.\n" +
-                    "Maximum 20 characters for the name (spaces included)!\n" +
-                    "It will work only between UBC users and replace the official info in the profile.\n" +
-                    "Use 无 as name to go back to a profile without custom owner.";
+                let msg = "cowner 命令后需依次输入主人的会员编号、归属天数和自定义主人名称。\n" +
+                    "自定义主人可以是游戏中的任何玩家，包括你自己或你的奴隶。\n" +
+                    "归属天数不能超过你加入游戏的天数。\n" +
+                    "名称最多 20 个字符（包括空格）！\n" +
+                    "仅在 UBC 用户之间生效，并替换个人资料中显示的官方信息。\n" +
+                    "输入“无”作为名称，可移除个人资料中的自定义主人。";
                 infomsg(msg);
                 return;
             }
@@ -12069,7 +12069,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             } else {
                 const parts = args.split(/\s+/);
                 if (parts.length < 3) {
-                    infomsg("Usage: cowner <memberNumber> <days> <name> (name can contain spaces). Use '无' as name to delete custom owner.");
+                    infomsg("用法：cowner（会员编号）（天数）（名称），名称可以包含空格。输入“无”作为名称可删除自定义主人。");
                     return;
                 }
                 number = parseInt(parts[0], 10);
@@ -12077,11 +12077,11 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 nameRaw = parts.slice(2).join(' ').trim();
             }
             if (!Number.isInteger(number) || number <= 0) {
-                infomsg("Invalid member number. It must be a positive integer.");
+                infomsg("会员编号无效，必须是正整数。");
                 return;
             }
             if (!Number.isInteger(days) || days <= 0) {
-                infomsg("Invalid days. It must be a positive integer.");
+                infomsg("天数无效，必须是正整数。");
                 return;
             }
             let gamedays = CommonFormatDurationRange(CurrentTime, Player.Creation, {
@@ -12093,16 +12093,16 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             let match = gamedays && gamedays.match(/\d+/);
             let gameDaysNumber = match ? parseInt(match[0], 10) : 0;
             if (days > gameDaysNumber) {
-                infomsg("The number of owning days can't exceed the number of days you are in the game (" + gameDaysNumber + ").");
+                infomsg("归属天数不能超过你加入游戏的天数（" + gameDaysNumber + " 天）。");
                 return;
             }
             const allowedNameRe = /^[\p{L}\p{N}\p{Zs}'-]+$/u;
             if (!nameRaw || nameRaw.length === 0) {
-                infomsg("Name cannot be empty. Use '无' to remove the custom owner.");
+                infomsg("名称不能为空。输入“无”可移除自定义主人。");
                 return;
             }
             if (nameRaw.length > 20) {
-                infomsg("Maximum 20 characters for the name (spaces included)!");
+                infomsg("名称最多 20 个字符（包括空格）！");
                 return;
             }
             const nameLower = nameRaw.toLowerCase();
@@ -12113,19 +12113,19 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 nameIsValid = (/^[A-Za-z0-9 '\-]+$/).test(nameRaw) || (nameLower === "无");
             }
             if (!nameIsValid) {
-                infomsg("Name contains invalid characters. Allowed: letters, numbers, spaces, apostrophe (') and hyphen (-).");
+                infomsg("名称包含无效字符。允许使用字母、数字、空格、单引号（'）和连字符（-）。");
                 return;
             }
             if (nameRaw === "无") {
                 cowner1 = "";
                 cowner2 = 0;
                 cowner3 = 0;
-                infomsg("Custom owner deleted");
+                infomsg("已删除自定义主人");
             } else {
                 cowner1 = nameRaw;
                 cowner2 = number;
                 cowner3 = days;
-                infomsg("Custom owner created or modified");
+                infomsg("已创建或修改自定义主人");
             }
             M_MOANER_saveControls();
             Player.OnlineSharedSettings.UBCShared.cowner1 = cowner1;
@@ -12139,15 +12139,15 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'ctitle',
-        Description: "(custom title): creates a custom title, that does not require to satisfy some conditions.",
+        Description: "（自定义称号）：创建不受部分条件限制的自定义称号。",
         Action: (args, originalInput) => {
             if (args === "") {
-                let msg = "The ctitle command must be followed by the custom title you want to display in your profile.\n" +
-                    "It can be an original title or an existing official title, for which you don't satisfy some conditions.\n" +
-                    "Maximum 25 characters (spaces included)!\n" +
-                    "It will work only between UBC users.\n" +
-                    "This title will not be displayed on the Titles screen.\n" +
-                    "Use 无 as title to go back to a profile without custom title.";
+                let msg = "ctitle 命令后需输入你想在个人资料中显示的自定义称号。\n" +
+                    "可以使用原创称号，也可以使用尚未满足获取条件的官方称号。\n" +
+                    "最多 25 个字符（包括空格）！\n" +
+                    "仅在 UBC 用户之间生效。\n" +
+                    "此称号不会显示在称号页面中。\n" +
+                    "输入“无”作为称号，可恢复不使用自定义称号的个人资料。";
                 infomsg(msg);
                 return;
             }
@@ -12157,10 +12157,10 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             if ((length > 0) && (length < 26) && (custom.match(LS))) {
                 if (custom === "无") {
                     ctitle = "";
-                    infomsg("Custom title deleted");
+                    infomsg("已删除自定义称号");
                 } else {
                     ctitle = custom;
-                    infomsg("Custom title created or modified");
+                    infomsg("已创建或修改自定义称号");
                 }
                 M_MOANER_saveControls();
                 Player.OnlineSharedSettings.UBCShared.ctitle = ctitle;
@@ -12168,7 +12168,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     OnlineSharedSettings: Player.OnlineSharedSettings
                 });
             } else {
-                infomsg("Maximum 25 characters (spaces included)!");
+                infomsg("最多 25 个字符（包括空格）！");
             }
         }
     }])
@@ -12326,7 +12326,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 let level = stringGgts2[1];
                 minigame = level;
                 M_MOANER_saveControls();
-                let msg = "" + tmpname + " 被两个女仆抓住并锁在精神病院，进行 " + minutes + " 分钟的 Good Girl Training System Level " + level + " 训练。";
+                let msg = "" + tmpname + " 被两个女仆抓住并锁在精神病院，进行 " + minutes + " 分钟的乖女孩训练系统，等级为 " + level + " 训练。";
                 publicmsg(msg);
                 DialogLentLockpicks = false;
                 RoomToGame();
@@ -12376,7 +12376,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             let [, , ...message] = command.split(" ");
             let msg = message?.join(" ");
             if (!msg) {
-                infomsg("Please include words to say after the gagtalk level.");
+                infomsg("请在口塞说话等级后输入要说的话。");
                 return;
             }
             if (dolltalk === true && IsDollTalk(msg) === false) {
@@ -12499,7 +12499,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         asset = Inventory.Asset.Description;
                                         code = Inventory.Property.CombinationNumber;
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + code + "");
                                     }
                                     if (Inventory.Property.LockedBy == "PortalLinkPadlock") {
@@ -12507,7 +12507,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         asset = Inventory.Asset.Description;
                                         code = Inventory.Property.PortalLinkCode;
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + code + "");
                                     }
                                     if ((Inventory.Property.LockedBy == "SafewordPadlock") || (Inventory.Property.LockedBy == "PasswordPadlock") || (Inventory.Property.LockedBy == "TimerPasswordPadlock")) {
@@ -12517,7 +12517,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         asset = Inventory.Asset.Description;
                                         code = Inventory.Property.Password;
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + code + "");
                                         if (Inventory.Property.LockedBy == "TimerPasswordPadlock") {
                                             time = Inventory.Property.RemoveTimer;
@@ -12534,7 +12534,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         time = Inventory.Property.RemoveTimer;
                                         left = TimerToString(time - CurrentTime);
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + left + "");
                                     }
                                 }
@@ -12545,7 +12545,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         time = Inventory.Property.RemovalTime;
                                         left = TimerToString(time - CurrentTime);
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + left + "");
                                     }
                                     if ((Inventory.Property.Name == "Heart Padlock") && (Player.HeartLock.padlocks[Target].unlockTime != null)) {
@@ -12554,7 +12554,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                         time = Player.HeartLock.padlocks[Target].unlockTime;
                                         left = TimerToString(time - CurrentTime);
                                         ChatRoomSendLocal("AssetGroup = " + Target);
-                                        ChatRoomSendLocal("Locked with " + Lock);
+                                        ChatRoomSendLocal("使用的锁：" + Lock);
                                         ChatRoomSendLocal("" + asset + " = " + left + "");
                                     }
                                     if (Inventory.Property.Name == "DeviousPadlock") {
@@ -12567,7 +12567,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                             time = new Date(time);
                                             left = TimerToString(time - CurrentTime);
                                             ChatRoomSendLocal("AssetGroup = " + Target);
-                                            ChatRoomSendLocal("Locked with " + Lock);
+                                            ChatRoomSendLocal("使用的锁：" + Lock);
                                             ChatRoomSendLocal("" + asset + " = " + left + "");
                                         }
                                     }
@@ -12791,7 +12791,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                     } else {
                                         Color2 = "无法更改颜色";
                                     }
-                                    ChatRoomSendLocal("Layer " + ly + " = " + Name + " - " + Color2);
+                                    ChatRoomSendLocal("图层 " + ly + " = " + Name + " - " + Color2);
                                     ly++;
                                 }
                             }
@@ -12803,7 +12803,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                     let Name2 = Asset.Layer[ly].Name;
                                     let Index = InventoryGet(Player, Target).Asset.Layer[ly].ColorIndex;
                                     Color2 = InventoryGet(Player, Target).Color[Index];
-                                    ChatRoomSendLocal("Layer " + ly + " = " + Name1 + " - " + Name2 + " - " + Color2);
+                                    ChatRoomSendLocal("图层 " + ly + " = " + Name1 + " - " + Name2 + " - " + Color2);
                                     //}
                                     ly++;
                                 }
@@ -13128,7 +13128,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 .filter(key =>
                     Player.MapData.PrivateState[key.prop])
                 .map(key => key.name);
-            ChatRoomSendLocal(`Keys found: ${foundKeys.join(" - ") || "None"}.`);
+            ChatRoomSendLocal(`找到的钥匙：${foundKeys.join(" - ") || "无"}。`);
             ChatRoomSendLocal(" ");
         }
     }])
@@ -13178,7 +13178,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                         ChatRoomSendLocal(`X = ${X} - Y = ${Y} - ${exinfo}`);  
                         if (ChatRoomData.BlockCategory.includes("Location")) {
                             if (character.OnlineSharedSettings.UBCShared.mapfull3 == true)  {
-                                if ((character != Player) && (!data.includes(character.MemberNumber))) ChatRoomSendLocal("This player has enabled the UBC cheat to get coordinates of other players in the map.");
+                                if ((character != Player) && (!data.includes(character.MemberNumber))) ChatRoomSendLocal("此玩家已启用 UBC 获取地图中其他玩家坐标的作弊功能。");
                             }
                         }
                         if (character === Player) keysinfo(Player);
@@ -13187,7 +13187,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                             if (Player.OnlineSharedSettings.UBCShared.mapfull3 == true)  {
                                 ChatRoomSendLocal(`X = ${X} - Y = ${Y} - ${exinfo}`);                    
                             } else { 
-                                ChatRoomSendLocal(`Location Sharing blocked - ${exinfo}`);
+                                ChatRoomSendLocal(`位置共享已被禁止 - ${exinfo}`);
                             }
                         } else {
                             ChatRoomSendLocal(`X = ${X} - Y = ${Y} - ${exinfo}`);
@@ -13298,7 +13298,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 ChatRoomSendLocal(`X = ${mapData.Pos?.X ?? "?"} - Y = ${mapData.Pos?.Y ?? "?"} - ${exinfo}`);
                 if (ChatRoomData.BlockCategory.includes("Location")) {
                     if (target.OnlineSharedSettings.UBCShared.mapfull3 == true)  {
-                        if ((target != Player) && (!data.includes(target.MemberNumber))) ChatRoomSendLocal("This player has enabled the UBC cheat to get coordinates of other players in the map.");
+                        if ((target != Player) && (!data.includes(target.MemberNumber))) ChatRoomSendLocal("此玩家已启用 UBC 获取地图中其他玩家坐标的作弊功能。");
                     }
                  }
             } else {
@@ -13306,7 +13306,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     if (Player.OnlineSharedSettings.UBCShared.mapfull3 == true)  {
                         ChatRoomSendLocal(`X = ${mapData.Pos?.X ?? "?"} - Y = ${mapData.Pos?.Y ?? "?"} - ${exinfo}`);                    
                     } else { 
-                        ChatRoomSendLocal(`Location Sharing blocked - ${exinfo}`);
+                        ChatRoomSendLocal(`位置共享已被禁止 - ${exinfo}`);
                     }
                 } else {
                     ChatRoomSendLocal(`X = ${mapData.Pos?.X ?? "?"} - Y = ${mapData.Pos?.Y ?? "?"} - ${exinfo}`);
@@ -14265,7 +14265,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                         } else if (InventoryGet(Player, "ItemPelvis").Asset.Name == "HempRope") {
                             Region = "ItemPelvis";
                         } else {
-                            msg1 = "You're too heavily tied to exercise.";
+                            msg1 = "你被绑得太紧，无法锻炼。";
                             infomsg(msg1);
                         }
                         if (msg1 == "") {
@@ -14938,15 +14938,15 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'setdevious',
-        Description: "(lock time) (anticheat): sets the time and the anticheat for all current devious locks on yourself.",
+        Description: "（上锁时间）（防作弊）：设置自己当前所有 Devious 锁的时间和防作弊选项。",
         Action: (args) => {
             if (args === "") {
-                let msg = "The setdevious command must be followed by two numbers for lock time and anticheat option.\n" +
-                    "The time is expressed in hours. The minimum is 1 hour. Use 0 for unlimited time.\n" +
-                    "Use ? if you want a time randomly choosen by the game (between 1 and 720 hours).\n" +
-                    "For the anticheat option, use 0 ( = disabled) or 1 ( = enabled).\n" +
-                    "Note: the settings will not automatically be reflected in the DOGS interface, you will see them only after a full relog.\n" +
-                    "It is recommended to make this full relog immediately after correct execution of this command to preserve the updated data.";
+                let msg = "setdevious 命令后必须提供两个数字，分别表示上锁时间和防作弊选项。\n" +
+                    "时间以小时为单位，最少为 1 小时。使用 0 表示不限时。\n" +
+                    "使用 ? 可让游戏随机选择时间（1 到 720 小时）。\n" +
+                    "防作弊选项：0 = 禁用，1 = 启用。\n" +
+                    "注意：这些设置不会立即显示在 DOGS 界面中，完全重新登录后才能看到。\n" +
+                    "建议在此命令成功执行后立即完全重新登录，以保留更新后的数据。";
                 infomsg(msg);
             } else {
                 let stringdevious1 = args;
@@ -14997,7 +14997,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                                     DOGSdata.deviousPadlock.itemGroups[Group] = value;
                                 }
                             if (devious != 0) {
-                                infomsg("Settings for your devious locks have been updated. Please make now a full relog to preserve the updated data!");
+                                infomsg("Devious 锁的设置已更新。请立即完全重新登录，以保留更新后的数据！");
                                 ChatRoomCharacterUpdate(Player);
                                 Player.ExtensionSettings.DOGS = LZString.compressToBase64(JSON.stringify(DOGSdata));
                                 ServerPlayerExtensionSettingsSync('DOGS');
@@ -16281,7 +16281,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     "<b>clothing</b> = 与服装相关的命令。\n" +
                     "<b>escape</b> = 与逃脱相关的命令。\n" +
                     "<b>fun</b> = 与乐趣、痛苦和愉悦相关的命令。\n" +
-                    "<b>info</b> = commands that give infos.\n" +
+                    "<b>info</b> = 查询信息的命令。\n" +
                     "<b>maps</b> = 与混合房间和地图房间相关的命令。\n" +
                     "<b>misc</b> = 帮助、信息、登录和 Ulist 命令。\n" +
                     "<b>settings</b> = 自定义 ULTRAbc 的命令。\n" +
@@ -16302,14 +16302,14 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             }
             if (args === "bondage") {
                 let msg = "束缚命令 - * = 使用时获取更多信息\n" +
-                    "<b>/autoheart</b> = puts heart locks on yourself and configures them. *.\n" +
+                    "<b>/autoheart</b> = 为自己戴上心锁并进行设置。*\n" +
                     "<b>/hint</b> （目标）（提示）= 为所有带密码的锁添加或更改提示。\n" +
                     "<b>/lock</b> = 为所有可锁定物品添加锁。*。\n" +
                     "<b>/outfit</b> = 恢复/保存/加载服装（包括束缚）。*\n" +
                     "<b>/pet</b> （目标）= 成为完全受束缚的宠物。\n" +
                     "<b>/randomize</b> （目标）= 裸体 + 内衣 + 服装 + 束缚命令。\n" +
                     "<b>/restrain</b> （目标）= 添加随机束缚。\n" +
-                    "<b>/setdevious</b> = configures all your current devious locks. *\n" +
+                    "<b>/setdevious</b> = 设置自己当前所有 Devious 锁。*\n" +
                     "<b>/solidity</b> （数值）（目标）= 更改当前大多数束缚的坚固度。数值必须在 1 到 99 之间。\n" +
                     "<b>/spin</b> （目标）（选项）= 访问任何命运之轮，即使隐藏的。*\n" +
                     "<b>/weaken</b> = 削弱你所有的技能一小时。";
@@ -16317,9 +16317,9 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
             }
             if (args === "character") {
                 let msg = "角色命令 - * = 使用时获取更多信息\n" +
-                    "<b>/cname</b> (custom name) = creates a custom name. *\n" +
-                    "<b>/cowner</b> (member number) (owning days) (owner name) = sets a custom owner. *\n" +
-                    "<b>/ctitle</b> (custom title) = creates a custom title. *\n" +
+                    "<b>/cname</b>（自定义名称）= 创建自定义名称。*\n" +
+                    "<b>/cowner</b>（会员编号）（归属天数）（主人名称）= 设置自定义主人。*\n" +
+                    "<b>/ctitle</b>（自定义称号）= 创建自定义称号。*\n" +
                     "<b>/difficulty</b> （数字）= 更改游戏难度。*\n" +
                     "<b>/maxstatistics</b> = 给予最大统计值。\n" +
                     "<b>/permission</b> （数字）= 更改你的物品权限 *\n" +
@@ -16348,10 +16348,10 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     "<b>/naked</b> （目标）= 移除服装。\n" +
                     "<b>/outfit</b> （选项）= 恢复/保存/加载服装（包括束缚）。*\n" +
                     "<b>/underwear</b> （目标）= 更改内衣。\n" +
-                    "<b>/wexport</b> (目标) = fully exports outfit in UBC/BCG format.\n" +
-                    "<b>/wimport1</b> (目标) = imports clothing + restraints in UBC/BCG format.\n" +
-                    "<b>/wimport2</b> (目标) = imports clothing + restraints + cosplay in UBC/BCG format.\n" +
-                    "<b>/wimport3</b> (目标) = fully imports outfit in UBC/BCG format.\n" +
+                    "<b>/wexport</b> (目标) = 以 UBC/BCG 格式完整导出装扮。\n" +
+                    "<b>/wimport1</b> (目标) = 以 UBC/BCG 格式导入服装和拘束。\n" +
+                    "<b>/wimport2</b> (目标) = 以 UBC/BCG 格式导入服装、拘束和角色扮演服装。\n" +
+                    "<b>/wimport3</b> (目标) = 以 UBC/BCG 格式完整导入装扮。\n" +
                     "<b>/wrobe</b> （目标）= 完全打开目标的衣柜。";
                 infomsg(msg);
             }
@@ -16386,12 +16386,12 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 infomsg(msg);
             }
             if (args === "info") {
-                let msg = "Info commands - * = more info when using\n" +
+                let msg = "信息命令 - * = 使用时可获取更多信息\n" +
                     "<b>/maproom</b> = 提供当前地图中玩家的信息。\n" +
                     "<b>/mbsroom</b> = 当前房间中 MBS 轮子的信息。\n" +
                     "<b>/mstatus</b> = 显示 moaner 的当前状态。\n" +
                     "<b>/uhelp</b> （类别）= 显示 ULTRAbc 命令。*\n" +
-                    "<b>/umods</b> (target) = infos about mods used by all players or a specific player in the current chat room.\n" +
+                    "<b>/umods</b>（目标）= 查询当前聊天室所有玩家或指定玩家使用的插件。\n" +
                     "<b>/uroom</b> = 当前房间中 UBC/Uwall 用户的信息。";
                 infomsg(msg);
             }
@@ -16546,7 +16546,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'umods',
-        Description: "(target): displays infos about mods used by all players or a specific player in the current chat room.",
+        Description: "（目标）：显示当前聊天室所有玩家或指定玩家使用的插件信息。",
         Action: (args) => {
             CommandsModsList.StartRemote(args);
         }
@@ -16770,7 +16770,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                 let stringSol2 = stringSol1.split(/[ ,]+/);
                 let slot = stringSol2[0];
                 let mode = stringSol2[1];
-                let msg = "Mode changed for one of your vibes!";
+                let msg = "已更改你其中一个振动器的模式！";
                 if ((slot > -1) && (slot < 10)) {
                     if (slot == 0) Target = "ItemBoots";
                     if (slot == 1) Target = "ItemBreast";
@@ -17066,7 +17066,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'wexport',
-        Description: "(目标): fully exports outfit in UBC/BCG format.",
+        Description: "(目标): 以 UBC/BCG 格式完整导出装扮。",
         Action: (args) => {
             let target = Player;
             if (args != "") target = TargetSearch(args);
@@ -17102,7 +17102,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'wimport1',
-        Description: "(目标): imports clothing + restraints in UBC/BCG format.",
+        Description: "(目标): 以 UBC/BCG 格式导入服装和拘束。",
         Action: (args) => {
             let target = Player;
             if (args != "") target = TargetSearch(args);
@@ -17117,7 +17117,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     return;
                 }
             }
-            let appinp = prompt('Please input the awcode (Compatible with BCG).', '');
+            let appinp = prompt('请输入 awcode（兼容 BCG）。', '');
             C = target;
             for (let A = C.Appearance.length - 1; A >= 0; A--)
                 if ((C.Appearance[A].Asset.Group.Category == "Appearance") && C.Appearance[A].Asset.Group.AllowNone) {
@@ -17145,7 +17145,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'wimport2',
-        Description: "(目标): imports clothing + restraints + cosplay in UBC/BCG format.",
+        Description: "(目标): 以 UBC/BCG 格式导入服装、拘束和角色扮演服装。",
         Action: (args) => {
             let target = Player;
             if (args != "") target = TargetSearch(args);
@@ -17160,7 +17160,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     return;
                 }
             }
-            let appinp = prompt('Please input the awcode (Compatible with BCG).', '');
+            let appinp = prompt('请输入 awcode（兼容 BCG）。', '');
             C = target;
             CharacterNaked(C);
             CharacterReleaseNoLock(C);
@@ -17183,7 +17183,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
 
     CommandCombine([{
         Tag: 'wimport3',
-        Description: "(目标): fully imports outfit in UBC/BCG format.",
+        Description: "(目标): 以 UBC/BCG 格式完整导入装扮。",
         Action: (args) => {
             let target = Player;
             if (args != "") target = TargetSearch(args);
@@ -17198,7 +17198,7 @@ var bcModSDK=function(){"use strict";const o="1.2.0";function e(o){alert("Mod ER
                     return;
                 }
             }
-            let appinp = prompt('Please input the awcode (Compatible with BCG).', '');
+            let appinp = prompt('请输入 awcode（兼容 BCG）。', '');
             C = target;
             CharacterNaked(C);
             CharacterReleaseNoLock(C);
